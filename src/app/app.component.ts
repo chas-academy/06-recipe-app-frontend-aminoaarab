@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-test';
+  title = 'Bombastic-Food';
+
+
+  handleClick = () => {
+    console.log("THis button is working");
+  }
 }

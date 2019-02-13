@@ -1,5 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<h1>Welcome to {{ title }}</h1>
 
 
+<button (click)="handleClick()">Click me!</button>
+
+<button routerLink="saved/">saved!</button>
+<button routerLink="recipes/">recipes!</button>
+<button routerLink="/">back</button>
 
 <router-outlet></router-outlet>
