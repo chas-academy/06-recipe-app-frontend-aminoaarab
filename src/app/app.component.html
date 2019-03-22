@@ -24,6 +24,19 @@
 
 <!-- <button (click)="handleClick()">Click me!</button> -->
 
+<input type="text" [(ngModel)]="search"  placeholder="Search for a Recipe..."/>
+<button (click)="searchForRecipes()">Get Recipes</button>
+<ng-container *ngFor="let recipe of recipes">
+<div>
+    <h3>{{ recipe.label }}</h3>
+    <p>{{ recipe.dietLabels }}</p>
+    <p>{{ recipe.cautions }}</p>
+    <p>{{ recipe.healthLabels }}</p>
+    <p><a routerLink="recipes-details/">ingredients count: {{ recipe.ingredients.length }}.</a></p>
+    <img src="{{ recipe.image }}" /> 
+</div>
+  <button (click)="handleClick()">Save Recipe</button>
+
 <!-- <button routerLink="saved/">saved!</button>
 <button routerLink="recipes/">recipes!</button> -->
 <!-- <button routerLink="/">back</button> -->

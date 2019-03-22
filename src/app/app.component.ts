@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { RecipeService } from './recipe.service';
+import { Observable } from 'rxjs';
+import { stringify } from '@angular/core/src/util';
+import { RecipesListComponent } from './recipes-list/recipes-list.component'
 
 @Component({
   selector: 'app-root',
@@ -7,9 +11,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Bombastic-Food';
-
-
-  handleClick = () => {
-    console.log("THis button is working");
+  search: any;
+  recipes: any [];
+  
+  constructor( private recipeService: RecipeService ) {}
+  public searchForRecipes(): void {
+    this.recipeService.getRecipes(this.search)
+      .subscribe(res => {
+        this.recipes = res.hits.map((hit: any) => (hit.recipe))
+        console.log(this.recipes)
+      });
   }
-}
+    }
+    
+  
