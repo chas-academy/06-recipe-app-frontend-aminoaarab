@@ -20,6 +20,7 @@ export class AppComponent {
       .subscribe(res => {
         this.recipes = res.hits.map((hit: any) => (hit.recipe))
         console.log(this.recipes)
+        
       });
   }
     }
