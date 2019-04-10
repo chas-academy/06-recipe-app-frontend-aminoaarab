@@ -14,14 +14,10 @@ export class AppComponent {
   search: any;
   recipes: any [];
   
-  constructor( private recipeService: RecipeService ) {}
-  public searchForRecipes(): void {
-    this.recipeService.getRecipes(this.search)
-      .subscribe(res => {
-        this.recipes = res.hits.map((hit: any) => (hit.recipe))
-        console.log(this.recipes)
-        
-      });
+  constructor() {}
+
+  ngOnInit(){
+    // this.searchForRecipes();
   }
     }
     

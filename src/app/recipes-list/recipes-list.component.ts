@@ -8,10 +8,19 @@ import {RecipeService} from '../recipe.service';
 })
 export class RecipesListComponent implements OnInit {
 
-  constructor() { }
+  searchInput = this.searchInput;
+  recipes: any;
 
+  constructor(private recipeService: RecipeService) { }
+
+  RecipesCall = () => {
+    this.recipeService.getRecipes(this.searchInput).subscribe(data => {
+      this.recipes = data.hits.map(hit => hit.recipe)
+    })
+  }
   
   ngOnInit() {
+    // this.RecipesCall();
   }
 
 }

@@ -24,15 +24,20 @@
 
 <!-- <button (click)="handleClick()">Click me!</button> -->
 
-<input type="text" [(ngModel)]="search"  placeholder="Search for a Recipe..."/>
-<button (click)="searchForRecipes()">Get Recipes</button>
-<ng-container *ngFor="let recipe of recipes">
-<div>
-    <h3>{{ recipe.label }}</h3>
-    <p><a routerLink="recipes-details/">ingredients {{ recipe.ingredientLines }}.</a></p>
-    <img src="{{ recipe.image }}" /> 
+<!-- <form (ngSubmit)="searchForRecipes()">
+    <input type="text" name="search" [(ngModel)]="search"  placeholder="Search for a Recipe..."/>
+    <button type="submit">Get Recipes</button>
+</form> -->
+
+<!-- <div *ngFor="let recipe of recipes">
+  <h3>{{ recipe.label }}</h3>
+  <img src="{{ recipe.image }}" /> 
+  <div>
+  <button routerLink="recipes-details/{{ recipe.label }}" routerLinkActive="active">See Ingredients</button>
+  <button routerLink="saved/">Save Recipe</button>
 </div>
-  <button (click)="handleClick()">Save Recipe</button>
+</div> -->
+
 
 <!-- <button routerLink="saved/">saved!</button>
 <button routerLink="recipes/">recipes!</button> -->

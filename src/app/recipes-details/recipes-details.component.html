@@ -1,6 +1,12 @@
-  
-  <ng-container *ngFor="let recipe of recipes">
-    <div>
-        <p>HELLLOOOO {{ recipe.ingredientLines }}</p>
-    </div>
-
+<div *ngIf="recipe">
+  <h4>{{recipe.label}}</h4>
+  <img src="{{recipe.image}}">
+  <p>Calories: {{recipe.calories}}</p>
+  <p>Ingredients:</p>
+  <ul>
+    <li *ngFor="let line of recipe.ingredientLines">
+      {{line}}
+    </li>
+  </ul>
+  <button routerLink="/recipes-list">Back</button>
+</div>

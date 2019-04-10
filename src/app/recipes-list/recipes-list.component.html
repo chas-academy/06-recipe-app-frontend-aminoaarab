@@ -1,3 +1,15 @@
-<p>
-  recipes-list works!
-</p>
+<form (ngSubmit)="RecipesCall()">
+  <div>
+    <input type="text" name="searchInput" [(ngModel)]="searchInput"
+      placeholder="Search for recipes.." autocomplete="off">
+    <button type="submit">Get Recipes</button>
+  </div>
+</form>
+
+<div *ngFor="let recipe of recipes">
+  <h3>{{recipe.label}}</h3>
+  <img src="{{recipe.image}}">
+  <div>
+    <button routerLink="/recipes-details/{{recipe.label}}">See ingredients</button>
+  </div>
+</div>
