@@ -1,15 +1,27 @@
-<form (ngSubmit)="RecipesCall()">
+<div class="flexSearch">
+  <form (ngSubmit)="RecipesCall()">
+    <div>
+      <input type="text" name="searchInput" [(ngModel)]="searchInput" placeholder="Search for recipes.."
+        autocomplete="off">
+      <button type="submit">Get Recipes</button>
+    </div>
+  </form>
   <div>
-    <input type="text" name="searchInput" [(ngModel)]="searchInput"
-      placeholder="Search for recipes.." autocomplete="off">
-    <button type="submit">Get Recipes</button>
+    <select [(ngModel)]="healthLabel">
+      <option value="" default>Filter by...</option>
+      <option value="&health=vegetarian">Vegetarian</option>
+      <option value="&health=peanut-free">Peanut Free</option>
+      <option value="&health=alcohol-free">Alcohol-Free</option>
+    </select>
   </div>
-</form>
+</div>
 
-<div *ngFor="let recipe of recipes">
-  <h3>{{recipe.label}}</h3>
-  <img src="{{recipe.image}}">
-  <div>
-    <button routerLink="/recipes-details/{{recipe.label}}">See ingredients</button>
+<div class="flexResult">
+  <div *ngFor="let recipe of recipes">
+    <h3>{{ recipe.label.slice(0,15) }}...</h3>
+    <img src="{{recipe.image}}">
+    <div>
+      <button routerLink="/recipes-details/{{recipe.label}}">See ingredients</button>
+    </div>
   </div>
 </div>

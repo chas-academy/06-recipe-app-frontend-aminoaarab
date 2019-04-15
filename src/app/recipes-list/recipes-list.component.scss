@@ -1,0 +1,18 @@
+h3 {
+    font-size: 20px;
+}
+
+.flexSearch {
+    display: inline;
+    text-align: center;
+    
+}
+
+
+.flexResult {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+}

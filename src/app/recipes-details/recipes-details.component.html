@@ -1,12 +1,16 @@
 <div *ngIf="recipe">
   <h4>{{recipe.label}}</h4>
   <img src="{{recipe.image}}">
-  <p>Calories: {{recipe.calories}}</p>
-  <p>Ingredients:</p>
+  <ul class="listStyle">
+    <li>Diet: {{ recipe.dietLabels }}</li>
+    <li>Calories: {{ recipe.calories.toFixed(0) }}</li>
+  </ul>
   <ul>
+    <h5>Ingredients:</h5>
     <li *ngFor="let line of recipe.ingredientLines">
       {{line}}
     </li>
   </ul>
   <button routerLink="/recipes-list">Back</button>
+  <button routerLink="/saved">Save</button>
 </div>
