@@ -1,11 +1,11 @@
-<div *ngIf="recipe">
+<div *ngIf="recipe" style="text-align: center;">
   <h4>{{recipe.label}}</h4>
-  <img src="{{recipe.image}}">
-  <ul class="listStyle">
+  <img src="{{recipe.image}}" style="width:400px;height:400px;">
+  <ul>
     <li>Diet: {{ recipe.dietLabels }}</li>
     <li>Calories: {{ recipe.calories.toFixed(0) }}</li>
   </ul>
-  <ul>
+  <ul class="ulBorder">
     <h5>Ingredients:</h5>
     <li *ngFor="let line of recipe.ingredientLines">
       {{line}}
