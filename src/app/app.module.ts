@@ -9,13 +9,17 @@ import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { RecipesDetailsComponent } from './recipes-details/recipes-details.component';
 import { HttpClientModule } from '@angular/common/http'; 
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SavedComponent,
     RecipesListComponent,
-    RecipesDetailsComponent
+    RecipesDetailsComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

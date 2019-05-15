@@ -11,10 +11,16 @@
         <a class="nav-link" routerLink="/recipes-list">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="recipes/">Recipes</a>
+        <a class="nav-link" routerLink="login/" *ngIf=!loggedIn>Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="saved/">Saved recipes</a>
+        <a class="nav-link" routerLink="/register">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="saved/" *ngIf=loggedIn>Saved recipes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" (click)="logout($event)" *ngIf=loggedIn>Logout</a>
       </li>
     </ul>
   </div>
