@@ -5,11 +5,12 @@ import { LoginComponent } from './login/login.component';
 import { RecipesDetailsComponent } from './recipes-details/recipes-details.component';
 import { RecipesListComponent } from './recipes-list/recipes-list.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 const appRoutes: Routes = [
-  { path: 'saved', component: SavedComponent },
+  
+  { path: 'saved', component: SavedComponent, canActivate: [AuthGuardService] },
   { path: 'recipes-details/:id', component: RecipesDetailsComponent },
   { path: 'login', component: LoginComponent},
   { path: 'register', component: SignupComponent },

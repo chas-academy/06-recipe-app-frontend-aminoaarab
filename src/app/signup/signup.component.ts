@@ -1,6 +1,6 @@
+import { AuthenticationService } from './../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsersService } from '../services/users.service';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { UsersService } from '../services/users.service';
 export class SignupComponent implements OnInit {
 
   constructor(
-    private service: UsersService,
+    private service: AuthenticationService,
     private router: Router,
   ) { }
 
@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    this.service.signup(this.form).subscribe(
+    this.service.register(this.form).subscribe(
       data => this.handleResponse(data),
       err => this.handleError(err)
     )

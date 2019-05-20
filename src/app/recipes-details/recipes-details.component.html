@@ -12,5 +12,5 @@
     </li>
   </ul>
   <button routerLink="/recipes-list">Back</button>
-  <button type="submit" (click)="saveRecipe();">Save</button>
+  <button type="submit" (click)="saveRecipe();" *ngIf="service.isLoggedIn()">Save</button>
 </div>

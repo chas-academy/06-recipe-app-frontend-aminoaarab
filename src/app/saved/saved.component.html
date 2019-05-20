@@ -1,5 +1,11 @@
-<p>
-  saved works!
-</p>
-
-<button routerLink="/">back</button>
+<div *ngIf="info">
+  <h4 style="text-align: center;">Saved recipes</h4>
+<div *ngFor="let title of info">
+  <ul>
+    <li><b>{{title.title}}</b></li>
+    <li>{{title.description}}</li>
+    <li><button type="button" class="btn btn-danger" (click)="deleteRecipe(title.id)">Delete</button></li>
+  </ul>
+</div>
+</div>
+<button type="button" class="btn btn-primary" style="font-size: 30px;" routerLink="/">back</button>

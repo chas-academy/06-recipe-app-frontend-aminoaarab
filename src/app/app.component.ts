@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from './services/authentication.service';
 import { RecipeService } from './recipe.service';
 import { Observable } from 'rxjs';
 import { stringify } from '@angular/core/src/util';
@@ -14,7 +16,11 @@ export class AppComponent {
   search: any;
   recipes: any [];
   
-  constructor() {}
+  constructor(
+    public router: Router,
+    public auth: AuthenticationService,
+    
+    ) {}
 
   ngOnInit(){
     // this.searchForRecipes();
