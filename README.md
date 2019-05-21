@@ -1,1 +1,1 @@
-Link: frontendbombasticfood.aminaarab.chas.academy
+Link: http://frontendbombasticfood.aminaarab.chas.academy/
